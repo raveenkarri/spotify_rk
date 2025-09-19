@@ -4,11 +4,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 10px;
 }
 
 .login-form-container {
-  width: 30%;
-  height: 60%;
+  width: 95%;
+  max-width: 400px;
+  height: auto;
   background-color: rgba(0, 0, 0, 0.55);
   display: flex;
   flex-direction: column;
@@ -18,59 +20,108 @@
 }
 
 .login-logo {
-  width: 180px;
+  width: 120px;
+  max-width: 60%;
 }
+
 .login-heading {
   color: white;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  margin: 10px 0;
+  text-align: center;
 }
+
 .login-form {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 100%;
-  gap: 10px;
+  gap: 12px;
 }
+
 .login-form-label {
   width: 100%;
   text-align: left;
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   color: white;
   font-weight: bold;
 }
+
 .login-form-input {
   border: none;
   width: 100%;
-  border-radius: 10px;
-  height: 18%;
-  font-size: 1rem;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 0.9rem;
   outline: none;
-}
-.login-button {
-  width: 100%;
-  height: 18%;
-  background-color: rgb(22, 162, 22);
-  border: none;
-  border-radius: 10px;
-  color: white;
-  outline: none;
-  margin-top: 10px;
-}
-.login-button:hover {
-  background-color: rgb(1, 93, 1);
-  font-size: 1.3rem;
-  cursor: pointer;
 }
 
-@media (max-width: 768px) {
+.login-button {
+  width: 100%;
+  background-color: rgb(22, 162, 22);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  padding: 10px;
+  font-size: 0.95rem;
+  margin-top: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.login-button:hover {
+  background-color: rgb(1, 93, 1);
+  font-size: 1rem;
+}
+
+.login-error {
+  color: red;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+@media (min-width: 481px) {
   .login-form-container {
     width: 80%;
-    height: 60%;
+    padding: 20px;
+  }
+
+  .login-heading {
+    font-size: 1.3rem;
+  }
+
+  .login-form-input {
+    font-size: 1rem;
+  }
+
+  .login-button {
+    font-size: 1rem;
+    padding: 12px;
   }
 }
-.login-error{
-  color: red;
-  font-size: 0.75rem;
-  font-weight: 600;
+
+@media (min-width: 769px) {
+  .login-form-container {
+    width: 40%;
+  }
+
+  .login-heading {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 1201px) {
+  .login-form-container {
+    width: 30%;
+  }
+
+  .login-heading {
+    font-size: 1.5rem;
+  }
+
+  .login-logo {
+    width: 150px;
+  }
 }
