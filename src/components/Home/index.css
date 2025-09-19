@@ -1,0 +1,32 @@
+.home-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding-left: 0px;
+  margin-bottom: 5%;
+}
+.home-list-item {
+  width: 10%;
+  text-align: center;
+}
+.home-main-container {
+  margin-top: 2%;
+}
+.home-main-heading {
+  color: white;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.home-image {
+  width: 106px;
+  height: 106px;
+  border-radius: 10px;
+}
+.home-heading {
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+}

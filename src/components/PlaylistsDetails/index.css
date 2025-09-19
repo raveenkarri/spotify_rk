@@ -1,0 +1,140 @@
+.playlist-details-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  height: 100%;
+}
+
+.back-button {
+  padding: 8px 16px;
+  margin-bottom: 20px;
+  background-color: #303030;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background-color: #303030;
+}
+
+.playlist-info {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  gap: 10px;
+}
+
+.playlist-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  border: 2px solid #303030;
+}
+
+.playlist-type {
+  color: #b3b3b3;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.playlist-name {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.playlist-description {
+  font-size: 16px;
+  color: #ccc;
+}
+
+.playlist-header,
+.playlist-item {
+  display: grid;
+  grid-template-columns: 5% 30% 25% 10% 20% 10%;
+  align-items: center;
+  gap: 10px;
+}
+
+.playlist-header p {
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.playlist-item p {
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+}
+
+.playlist-tracks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  height: 70vh;
+  overflow-y: auto;
+}
+
+.playlist-item {
+  padding: 10px 0;
+  cursor: pointer;
+  border-bottom: 1px solid #222;
+  transition: background 0.2s;
+}
+
+.playlist-item:hover {
+  background-color: #333;
+}
+
+.playlist-item.playing {
+  background-color: #303030;
+  color: #000;
+}
+
+.audio-player {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #181818;
+  padding: 10px 20px;
+  display: flex;
+  gap: 15px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  color: #fff;
+  align-items: center;
+}
+
+.now-playing-default {
+  display: flex;
+  text-align: left;
+  gap: 10px;
+  align-items: center;
+}
+
+.now-playing-default img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 5px;
+  border: 1px solid #1db954;
+}
+
+.now-playing-default p {
+  font-size: 16px;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.audio-player audio {
+  flex: 1;
+  max-width: 600px;
+}

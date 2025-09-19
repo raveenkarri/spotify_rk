@@ -1,0 +1,39 @@
+.sidebar-container {
+  max-height: 100vh;
+  width: 98px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: black;
+}
+
+.sidebar-logo {
+  width: 82px;
+}
+
+.sidebar-logout-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sidebar-logout-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.sidebar-logout-image {
+  width: 36px;
+  height: 36px;
+  border: none;
+}
+
+.sidebar-logout-text {
+  color: #9b9b9b;
+  font-weight: 600;
+  font-size: 12px;
+  margin: auto;
+}
