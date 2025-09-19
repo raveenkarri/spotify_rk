@@ -37,7 +37,7 @@ const PlaylistsDetails = ({match, history}) => {
 
   useEffect(() => {
     fetchPlaylistDetails()
-  }, [])
+  }, [fetchPlaylistDetails])
 
   if (error) return <FailureView onClickTryAgain={fetchPlaylistDetails} />
   if (!playList) return <Loader />
@@ -56,7 +56,7 @@ const PlaylistsDetails = ({match, history}) => {
         />
         <div>
           <p className="playlist-type">Editor's picks</p>
-         
+
           <p className="playlist-description">{playList.description}</p>
         </div>
       </div>
@@ -97,7 +97,11 @@ const PlaylistsDetails = ({match, history}) => {
           <p>{playList.name}</p>
         </div>
 
-        {currentSong && <audio src={currentSong} controls autoPlay />}
+        {currentSong && (
+          <audio src={currentSong} controls autoPlay>
+            <track kind="captions" src="" label="No captions" />
+          </audio>
+        )}
       </div>
     </div>
   )

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import {useEffect, useState} from 'react'
 import moment from 'moment'
 import FailureView from '../FailureView'
 import Loader from '../Loader'
@@ -11,15 +11,17 @@ const formatDuration = ms => {
   return `${minutes}:${seconds.toString().padStart(2, '0')}`
 }
 
-const AlbumDetails = ({ match, history }) => {
+const AlbumDetails = ({match, history}) => {
   const [album, setAlbum] = useState(null)
   const [error, setError] = useState(false)
   const [currentSong, setCurrentSong] = useState(null)
-  const { id } = match.params
+  const {id} = match.params
 
   const fetchAlbumDetails = async () => {
     try {
-      const res = await fetch(`https://apis2.ccbp.in/spotify-clone/album-details/${id}`)
+      const res = await fetch(
+        `https://apis2.ccbp.in/spotify-clone/album-details/${id}`,
+      )
       const data = await res.json()
       if (!res.ok) {
         setError(true)
@@ -46,7 +48,11 @@ const AlbumDetails = ({ match, history }) => {
       </button>
 
       <div className="album-info">
-        <img className="album-image" src={album.images?.[0]?.url} alt={album.name} />
+        <img
+          className="album-image"
+          src={album.images?.[0]?.url}
+          alt={album.name}
+        />
         <div>
           <h1 className="album-name">{album.name}</h1>
           <p className="album-description">
@@ -67,7 +73,9 @@ const AlbumDetails = ({ match, history }) => {
         {album.tracks?.items?.map((item, i) => (
           <li
             key={item.id}
-            className={`album-item ${currentSong === item.preview_url ? 'playing' : ''}`}
+            className={`album-item ${
+              currentSong === item.preview_url ? 'playing' : ''
+            }`}
             onClick={() => setCurrentSong(item.preview_url)}
           >
             <p>{i + 1}</p>
@@ -83,7 +91,11 @@ const AlbumDetails = ({ match, history }) => {
           <img src={album.images?.[0]?.url} alt={album.name} />
           <p>{album.name}</p>
         </div>
-        {currentSong && <audio src={currentSong} controls autoPlay />}
+        {currentSong && (
+          <audio src={currentSong} controls autoPlay>
+            <track kind="captions" src="" label="No captions" />
+          </audio>
+        )}
       </div>
     </div>
   )

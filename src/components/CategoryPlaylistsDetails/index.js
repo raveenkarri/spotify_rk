@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react'
-import {useHistory} from 'react-router-dom'
+import {useHistory, Link} from 'react-router-dom'
 import FailureView from '../FailureView'
 import Loader from '../Loader'
 import './index.css'
@@ -50,10 +50,10 @@ const CategoryPlaylistsDetails = ({match}) => {
 
       <div className="category-playlists">
         {categoryPlaylists.map(playlist => (
-          <div
+          <Link
             key={playlist.id}
             className="playlist-card"
-            onClick={() => history.push(`/playlist/${playlist.id}`)}
+            to={`/playlist/${playlist.id}`}
             data-testid={`playlist-${playlist.id}`}
           >
             <img src={playlist.images?.[0]?.url} alt={playlist.name} />
@@ -61,7 +61,7 @@ const CategoryPlaylistsDetails = ({match}) => {
             <p className="playlist-tracks-count">
               {playlist.tracks?.total} tracks
             </p>
-          </div>
+          </Link>
         ))}
       </div>
 
@@ -70,7 +70,11 @@ const CategoryPlaylistsDetails = ({match}) => {
           <img src={categoryPlaylists[0]?.images?.[0]?.url} alt="category" />
           <p>Category: {id}</p>
         </div>
-        {currentSong && <audio src={currentSong} controls autoPlay />}
+        {currentSong && (
+          <audio src={currentSong} controls autoPlay>
+            <track kind="captions" src="" label="No captions" />
+          </audio>
+        )}
       </div>
     </div>
   )

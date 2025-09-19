@@ -63,7 +63,7 @@ const Login = props => {
             value={password}
             onChange={e => setPassword(e.target.value)}
           />
-          {error && <p>{error}</p>}
+          {error && <p className="login-error">{error}</p>}
           <button className="login-button" type="submit">
             LOGIN
           </button>
